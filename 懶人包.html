@@ -1,0 +1,106 @@
+<meta charset="utf-8">
+<style>
+  :root{
+    --bg:#FAF8F3; --panel:#FFFFFF; --ink:#1C1E16; --ink2:#585A4E;
+    --line:#E7E1D4; --teal:#0E6E5A; --teal-soft:#E1F0EA;
+    --amber:#C07A16; --amber-soft:#FBEFD8; --red:#B23A2C; --red-soft:#F8E3DF;
+    --cjk:"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+    --mono:"SFMono-Regular",ui-monospace,"Menlo",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1080px;overflow:hidden}
+  body{background:var(--bg);font-family:var(--cjk);-webkit-font-smoothing:antialiased}
+  .poster{width:1080px;min-height:1350px;background:var(--bg);color:var(--ink);
+    padding:58px 72px 54px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  /* 背景油滴裝飾 */
+  .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.5}
+  .b1{width:340px;height:340px;background:var(--amber-soft);top:-90px;right:-70px}
+  .b2{width:260px;height:260px;background:var(--teal-soft);bottom:340px;left:-110px}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:24px;font-weight:800;
+    letter-spacing:.06em;color:var(--red);background:var(--red-soft);
+    padding:11px 22px;border-radius:100px;align-self:flex-start;position:relative}
+  h1{font-size:70px;line-height:1.1;font-weight:900;letter-spacing:-.01em;margin-top:22px;position:relative}
+  h1 .hl{color:var(--teal)}
+  .lead{font-size:28px;line-height:1.48;color:var(--ink2);margin-top:20px;font-weight:500;position:relative;max-width:900px}
+  .lead b{color:var(--red);font-weight:800}
+
+  .steps{display:flex;flex-direction:column;gap:18px;margin-top:34px;position:relative}
+  .step{display:flex;gap:24px;align-items:flex-start;background:var(--panel);
+    border:1.5px solid var(--line);border-radius:22px;padding:26px 32px;
+    box-shadow:0 10px 30px -20px rgba(28,30,22,.4)}
+  .num{flex:0 0 auto;width:66px;height:66px;border-radius:18px;background:var(--teal);
+    color:#fff;font-size:36px;font-weight:900;font-family:var(--mono);
+    display:grid;place-items:center;box-shadow:0 8px 18px -8px var(--teal)}
+  .step .t{font-size:31px;font-weight:850;line-height:1.25}
+  .step .d{font-size:23px;color:var(--ink2);line-height:1.45;margin-top:7px;font-weight:500}
+  .step .d b{color:var(--ink);font-weight:800}
+  .tag{display:inline-block;font-size:20px;font-weight:800;color:var(--amber);
+    background:var(--amber-soft);padding:3px 13px;border-radius:100px;margin-top:12px}
+
+  .privacy{display:flex;align-items:center;gap:16px;margin-top:22px;
+    background:var(--teal-soft);border:1.5px solid rgba(14,110,90,.35);
+    border-radius:18px;padding:20px 26px;position:relative}
+  .privacy svg{flex:0 0 auto}
+  .privacy .p{font-size:24px;font-weight:750;color:var(--ink);line-height:1.35}
+  .privacy .p b{color:var(--teal);font-weight:900}
+
+  .footer{margin-top:32px;display:flex;align-items:center;gap:28px;
+    padding-top:28px;border-top:2px dashed var(--line);position:relative}
+  .qr{width:178px;height:178px;flex:0 0 auto;background:#fff;border:1.5px solid var(--line);
+    border-radius:18px;padding:12px}
+  .qr img{width:100%;height:100%;image-rendering:pixelated;display:block}
+  .fbody{flex:1;min-width:0}
+  .fbody .go{font-size:24px;font-weight:800;color:var(--teal)}
+  .fbody .url{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--ink);
+    margin-top:8px;word-break:break-all;line-height:1.3}
+  .fbody .src{font-size:20px;color:var(--ink2);margin-top:14px;line-height:1.45}
+  .fbody .src b{color:var(--ink)}
+</style>
+
+<div class="poster" role="img" aria-label="使用懶人包">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+
+  <span class="eyebrow">🛢️ 致癌沙拉油事件 · 苯駢芘</span>
+  <h1>用<span class="hl">電子發票</span><br>30 秒自查<br>你買到問題商品了嗎</h1>
+  <p class="lead">中聯／苯駢芘沙拉油流入市面，食藥署<b>預防性下架 401 項</b>——超商飯糰、便當、醬料、火鍋料通通中鏢。與其一項項核對，不如讓發票幫你查。</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <div>
+        <div class="t">下載你的電子發票明細</div>
+        <div class="d">財政部電子發票平台 → 消費明細，把 <b>4～7 月</b>的 CSV 都下載下來。<span class="tag">一次只能查一個月、每檔 100 筆</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <div>
+        <div class="t">整批上傳到網站</div>
+        <div class="d">打開下方網站，把<b>所有 CSV 一次拖進去</b>，會自動合併、去除重複發票。</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <div>
+        <div class="t">下載你買到的可疑清單</div>
+        <div class="d">自動比對<b>食藥署官方名單</b>，列出你買過的可疑品項（含門市、發票號碼、官方業者／有效日期），一鍵匯出 CSV。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="privacy">
+    <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#0E6E5A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+    <div class="p"><b>全程在你的瀏覽器內比對</b>，發票明細不上傳、不留存，關掉分頁就消失。</div>
+  </div>
+
+  <div class="footer">
+    <div class="qr"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkAQMAAABEgsN2AAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP//8i138cAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAH4SURBVHic7djLbQMxDEVRdjD9d6kOGMD8yk6yMMjdFYKBo+HR6oGSRvSbISjUsDqSo34/rUJeK/cyFGpB+evzUo8X2G/7s1dVhkJtqCjzH5lY1TfoZSjUqvJwtgC/Ouq1Jgq1rU5FV2JcPRaF2lM5b8XWOUWqeT56l6FQ86qCev77a3lGoabVx8j0er226EYJCjWszrV3X2fI+OZj85lhFGpeZVyfdrlui1iBZTgKUKhpdSrA/jzyvkJ88LGBQm2oLKiO2sp6vKO1olDzSvMefaQKtM6WGekIOQq1orTdYqJVtkaa67zt5ijUoNKrYWo0UpuUfqQ8KNSOinBaz/R8RqRzKYnd/AVRqGmVr2LLtsRmaHtr9UkUakFpNs/7+WueM70o1KSKsjYZAY7EZp5FUKgdFemV2K/tqTlabiPMKNS00oplTDpPm5OxIAo1rfrb7JxSM9q+N0o/VaJQs0prstqp1rPq/SqEQq0oySuMev+U6plteJJRqHlVnTM6atZLfAjy0XZzFGpS3eHUuN3UOj3bmV4Ualbd6c2nZbVPZrZRqA31GV29D5MS6fXFUagN1fIpea/JFXq8tc4AKNSuOldW7ZXk1fuv9KJQU0qjhUqdLfskCrWobBzfxDV6aarMrYcZhVpQ9W8ri4K3ep9AoYbVNwOFmlU/dTGdUdmvGbIAAAAASUVORK5CYII=" alt="QR"></div>
+    <div class="fbody">
+      <div class="go">▶ 立即開始自查</div>
+      <div class="url">luxunhuang.github.io/<br>salad-oil-invoice-check</div>
+      <div class="src">資料來源：<b>食藥署「中聯油脂案專區」</b>受影響油品資訊＋預防性下架產品清單（擷取 2026-07-08）。結果僅供參考，請以食藥署與各業者最新公告為準。</div>
+    </div>
+  </div>
+</div>
